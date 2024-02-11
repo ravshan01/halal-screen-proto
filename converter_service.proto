@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+/** TODO: add stream rpc */
+service ConverterService {
+  rpc Convert (ConvertRequest) returns (ConvertResponse);
+}
+
+message ConvertRequest {
+  bytes content = 1;
+  ConvertContentType type = 2;
+  uint32 blur_percentage = 3;
+}
+message ConvertResponse {
+  bytes content = 1;
+}
+
+enum ConvertContentType {
+  IMAGE = 0;
+  VIDEO = 1;
+}
