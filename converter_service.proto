@@ -1,6 +1,5 @@
 syntax = "proto3";
 
-/** TODO: add stream rpc */
 service ConverterService {
   rpc Convert (ConvertRequest) returns (ConvertResponse);
 }
