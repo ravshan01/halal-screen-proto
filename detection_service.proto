@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+// Сервис для обнаружения объектов на изображениях и видео, используя нейронные сети
 service DetectionService {
   rpc DetectImages(DetectImagesRequest) returns (DetectImagesResponse) {}
   rpc DetectVideo(DetectVideoRequest) returns (DetectVideoResponse) {}
@@ -41,10 +42,14 @@ message VideoDetections {
 
 
 message Detection {
-  string label = 1;
+  DetectionObject object = 1;
   float score = 2;
   float x = 3;
   float y = 4;
   float width = 5;
   float height = 6;
+}
+
+enum DetectionObject {
+  Person = 0;
 }
