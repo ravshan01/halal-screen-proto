@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+service DetectionService {
+  rpc DetectImages(DetectImagesRequest) returns (DetectImagesResponse) {}
+  rpc DetectVideo(DetectVideoRequest) returns (DetectVideoResponse) {}
+}
+
+message DetectImagesRequest {
+  repeated Image images = 1;
+}
+message DetectImagesResponse {
+  repeated ImageDetections detections = 1;
+}
+
+message DetectVideoRequest {
+  Video video = 1;
+}
+message DetectVideoResponse {
+  VideoDetections detections = 2;
+}
+
+
+message Image {
+  string id = 1;
+  bytes content = 2;
+}
+message ImageDetections {
+  string image_id = 1;
+  repeated Detection detections = 2;
+  int32 total_detections = 3;
+}
+
+message Video {
+  string id = 1;
+  bytes content = 2;
+}
+message VideoDetections {
+  string video_id = 1;
+  repeated ImageDetections detections = 2;
+}
+
+
+message Detection {
+  string label = 1;
+  float score = 2;
+  float x = 3;
+  float y = 4;
+  float width = 5;
+  float height = 6;
+}
