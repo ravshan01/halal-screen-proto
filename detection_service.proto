@@ -11,13 +11,15 @@ message DetectImagesRequest {
 }
 message DetectImagesResponse {
   repeated ImageDetections detections = 1;
+  Error error = 2;
 }
 
 message DetectVideoRequest {
   Video video = 1;
 }
 message DetectVideoResponse {
-  VideoDetections detections = 2;
+  VideoDetections detections = 1;
+  Error error = 2;
 }
 
 
@@ -52,4 +54,9 @@ message Detection {
 
 enum DetectionObject {
   Person = 0;
+}
+
+message Error {
+  int32 code = 1;
+  string message = 2;
 }
