@@ -30,7 +30,6 @@ message Image {
 message ImageDetections {
   string image_id = 1;
   repeated Detection detections = 2;
-  int32 total_detections = 3;
 }
 
 message Video {
