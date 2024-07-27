@@ -1,7 +1,8 @@
 syntax = "proto3";
 
-// Сервис для обнаружения объектов на изображениях и видео, используя нейронные сети
-service DetectionService {
+package detections;
+
+service DetectionsService {
   rpc DetectImages(DetectImagesRequest) returns (DetectImagesResponse) {}
   rpc DetectVideo(DetectVideoRequest) returns (DetectVideoResponse) {}
 }
