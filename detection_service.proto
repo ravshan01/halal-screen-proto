@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package detections;
+package detection;
 
-service DetectionsService {
+service DetectionService {
   rpc DetectImages(DetectImagesRequest) returns (DetectImagesResponse) {}
   rpc DetectVideo(DetectVideoRequest) returns (DetectVideoResponse) {}
 }
