@@ -25,7 +25,7 @@ message DetectVideoResponse {
 
 
 message Image {
-  string id = 1;
+  string uuid = 1;
   bytes content = 2;
 }
 message ImageDetections {
@@ -34,7 +34,7 @@ message ImageDetections {
 }
 
 message Video {
-  string id = 1;
+  string uuid = 1;
   bytes content = 2;
 }
 message VideoDetections {
