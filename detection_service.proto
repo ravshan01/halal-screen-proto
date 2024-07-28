@@ -25,20 +25,16 @@ message DetectVideoResponse {
 
 
 message Image {
-  string uuid = 1;
   bytes content = 2;
 }
 message ImageDetections {
-  string image_id = 1;
   repeated Detection detections = 2;
 }
 
 message Video {
-  string uuid = 1;
   bytes content = 2;
 }
 message VideoDetections {
-  string video_id = 1;
   repeated ImageDetections detections = 2;
 }
 
@@ -53,6 +49,7 @@ enum DetectionObject {
   Person = 0;
 }
 
+/** Coords in pixels */
 message DetectionCoords {
   float x = 1;
   float y = 2;
