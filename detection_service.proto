@@ -46,14 +46,18 @@ message VideoDetections {
 message Detection {
   DetectionObject object = 1;
   float score = 2;
-  float x = 3;
-  float y = 4;
-  float width = 5;
-  float height = 6;
+  DetectionCoords coords = 3;
 }
 
 enum DetectionObject {
   Person = 0;
+}
+
+message DetectionCoords {
+  float x = 1;
+  float y = 2;
+  float width = 3;
+  float height = 4;
 }
 
 message Error {
