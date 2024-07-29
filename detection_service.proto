@@ -15,13 +15,13 @@ message DetectImagesResponse {
   Error error = 2;
 }
 
-message DetectVideoRequest {
-  Video video = 1;
-}
-message DetectVideoResponse {
-  VideoDetections detections = 1;
-  Error error = 2;
-}
+//message DetectVideoRequest {
+//  Video video = 1;
+//}
+//message DetectVideoResponse {
+//  VideoDetections detections = 1;
+//  Error error = 2;
+//}
 
 
 message Image {
@@ -31,12 +31,12 @@ message ImageDetections {
   repeated Detection detections = 2;
 }
 
-message Video {
-  bytes content = 2;
-}
-message VideoDetections {
-  repeated ImageDetections detections = 2;
-}
+//message Video {
+//  bytes content = 2;
+//}
+//message VideoDetections {
+//  repeated ImageDetections detections = 2;
+//}
 
 
 message Detection {
