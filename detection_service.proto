@@ -42,19 +42,19 @@ message ImageDetections {
 message Detection {
   DetectionObject object = 1;
   float score = 2;
-  DetectionCoords coords = 3;
+  Coords coords = 3;
+
+  // Detection box coordinates in pixels
+  message Coords {
+    float x = 1;
+    float y = 2;
+    float width = 3;
+    float height = 4;
+  }
 }
 
 enum DetectionObject {
   Person = 0;
-}
-
-/** Coords in pixels */
-message DetectionCoords {
-  float x = 1;
-  float y = 2;
-  float width = 3;
-  float height = 4;
 }
 
 message Error {
