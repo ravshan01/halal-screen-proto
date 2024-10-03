@@ -31,8 +31,7 @@ message ImageDetections {
     UnsupportedFormat = 0;
     Corrupted = 1;
     MaxSizeExceeded = 2;
-    Timeout = 5;
-    InternalError = 6;
+    InternalError = 3;
     Unexpected = 99;
   }
 }
