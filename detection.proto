@@ -1,10 +1,8 @@
 syntax = "proto3";
-
 package detection;
 
 service DetectionService {
   rpc DetectImages(DetectImagesRequest) returns (DetectImagesResponse) {}
-  //  rpc DetectVideo(DetectVideoRequest) returns (DetectVideoResponse) {}
 }
 
 message DetectImagesRequest {
@@ -59,13 +57,10 @@ message DetectError {
   string message = 2;
 }
 enum DetectErrorCode {
-  MaxImagesCountExceeded = 0;
-  MaxVideoDurationExceeded = 5;
-  MaxRequestSizeExceeded = 7;
-  InvalidRequest = 8;
+  BadRequest = 0;
+  MaxRequestsExceeded = 1;
+  MaxImagesExceeded = 2;
 
-  Timeout = 9;
   InternalError = 10;
-  ServiceUnavailable = 11;
   Unexpected = 99;
 }
