@@ -17,7 +17,7 @@ message BlurImageResponse {
 
 message ImageForBlur {
   bytes content = 1;
-  detection.Detection.Coords coords = 2;
+  repeated detection.Detection.Coords coords = 2;
   // between 0 and 100
   uint32 percentage = 3;
 }
